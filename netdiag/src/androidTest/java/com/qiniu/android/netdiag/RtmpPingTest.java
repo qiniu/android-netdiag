@@ -15,7 +15,7 @@ public class RtmpPingTest extends AndroidTestCase {
 
     public void testOK() throws InterruptedException {
         final CountDownLatch c = new CountDownLatch(1);
-        RtmpPing.start("src.publish.z1.pili.qiniudns.com", new TestLogger(), new RtmpPing.Callback() {
+        RtmpPing.start("live-rtmp.live.miclle.com", new TestLogger(), new RtmpPing.Callback() {
             @Override
             public void complete(RtmpPing.Result r) {
                 result = r;
