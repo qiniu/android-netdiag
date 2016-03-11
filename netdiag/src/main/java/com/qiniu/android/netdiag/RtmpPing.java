@@ -106,8 +106,6 @@ public final class RtmpPing implements Task{
             long connEnd = System.currentTimeMillis();
             int connect_time = (int)(connEnd -start);
 
-            long end = System.currentTimeMillis();
-
             try {
                 handshake(sock);
             } catch (IOException e) {
@@ -126,7 +124,7 @@ public final class RtmpPing implements Task{
                     e.printStackTrace();
                 }
             }
-
+            long end = System.currentTimeMillis();
             times[i] = (int)(end -start);
             index = i;
             output.write(String.format(Locale.getDefault(), "%d: conn:%d handshake:%d",
