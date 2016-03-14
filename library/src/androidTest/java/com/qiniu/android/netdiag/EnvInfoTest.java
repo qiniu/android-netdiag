@@ -13,4 +13,10 @@ public class EnvInfoTest extends AndroidTestCase {
         EnvInfo.CpuInfo cpu = EnvInfo.cpuInfo();
         Assert.assertTrue(cpu.total > cpu.current && cpu.current>0);
     }
+
+    public void testMem(){
+        EnvInfo.MemInfo mem = EnvInfo.memInfo();
+        Assert.assertTrue(mem.total>mem.free && mem.total>mem.cached);
+        Assert.assertTrue(mem.free>0 && mem.cached>0);
+    }
 }
