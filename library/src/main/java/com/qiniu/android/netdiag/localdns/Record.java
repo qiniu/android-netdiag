@@ -1,0 +1,77 @@
+package com.qiniu.android.netdiag.localdns;
+
+import java.util.Locale;
+
+/**
+ * Created by bailong on 15/6/12.
+ */
+public final class Record {
+    /**
+     * A 记录 类型
+     */
+    public static final int TYPE_A = 1;
+
+    /**
+     * CName 类型
+     */
+    public static final int TYPE_CNAME = 5;
+
+    /**
+     * 具体的值，A 记录时为IP，Cname时为指向的域名
+     */
+    public final String value;
+
+    /**
+     * 记录类型，A或者CName
+     */
+    public final int type;
+
+    /**
+     * TTL dns结果缓存时间
+     */
+    public final int ttl;
+
+    /**
+     * 时间戳，用来判断超时
+     */
+    public final long timeStamp;
+
+    public Record(String value, int type, int ttl, long timeStamp) {
+        this.value = value;
+        this.type = type;
+        this.ttl = ttl;
+        this.timeStamp = timeStamp;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || !(o instanceof Record)) {
+            return false;
+        }
+        Record another = (Record) o;
+        return this.value.equals(another.value)
+                && this.type == another.type
+                && this.ttl == another.ttl
+                && this.timeStamp == another.timeStamp;
+    }
+
+    public boolean isA() {
+        return type == TYPE_A;
+    }
+
+
+    public String toString(){
+        String t;
+        if (type == TYPE_A){
+            t= "A";
+        }else if (type == TYPE_CNAME){
+            t = "CNAME";
+        }else {
+            t = "type-"+type;
+        }
+
+        return String.format(Locale.ENGLISH, "%s\t%s\t%d", t, value, ttl);
+    }
+}
