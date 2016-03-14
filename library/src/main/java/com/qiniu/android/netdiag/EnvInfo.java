@@ -3,13 +3,14 @@ package com.qiniu.android.netdiag;
 import android.os.Process;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 /**
  * Created by bailong on 16/3/14.
  */
-public class EnvInfo {
+public final class EnvInfo {
     public static class CpuInfo{
         public final float total;
         public final float current;
@@ -114,11 +115,56 @@ public class EnvInfo {
         return new CpuInfo(percent, currentPercent);
     }
 
-    public static int totalMem(){
-        return 0;
+    public static class MemInfo{
+        public final int total;
+        public final int free;
+        public final int cached;
+
+        public MemInfo(int total, int free, int cached) {
+            this.total = total;
+            this.free = free;
+            this.cached = cached;
+        }
+
+        public MemInfo(){
+            this(0,0,0);
+        }
+    }
+    public static MemInfo memInfo(){
+        BufferedReader reader = null;
+        try {
+            reader = new BufferedReader(new FileReader("/proc/meminfo"));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return new MemInfo();
+        }
+        int total = 0;
+        int free = 0;
+        int cached = 0;
+        try {
+            String s = reader.readLine();
+            while (s != null) {
+                if (s.startsWith("MemTotal:")) {
+                    total = Integer.parseInt(s.split("[ ]+", 3)[1]);
+                } else if (s.startsWith("MemFree:"))
+                    free = Integer.parseInt(s.split("[ ]+", 3)[1]);
+
+                else if (s.startsWith("Cached:")){
+                    cached = Integer.parseInt(s.split("[ ]+", 3)[1]);
+                }
+                s = reader.readLine();
+            }
+        }catch (Exception e){
+            return new MemInfo();
+        }finally {
+
+            try {
+                reader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return new MemInfo(total, free, cached);
     }
 
-    public static int processMem(int pid){
-        return 0;
-    }
 }
