@@ -1,1 +1,1 @@
-include ':app', ':netdiag'
+include ':app', ':library'
