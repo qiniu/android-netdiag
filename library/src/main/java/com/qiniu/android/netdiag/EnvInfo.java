@@ -1,11 +1,17 @@
 package com.qiniu.android.netdiag;
 
+import android.annotation.TargetApi;
+import android.app.ActivityManager;
+import android.content.Context;
+import android.os.Build;
 import android.os.Process;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by bailong on 16/3/14.
@@ -115,28 +121,28 @@ public final class EnvInfo {
         return new CpuInfo(percent, currentPercent);
     }
 
-    public static class MemInfo{
+    public static class SystemMemInfo{
         public final int total;
         public final int free;
         public final int cached;
 
-        public MemInfo(int total, int free, int cached) {
+        public SystemMemInfo(int total, int free, int cached) {
             this.total = total;
             this.free = free;
             this.cached = cached;
         }
 
-        public MemInfo(){
+        public SystemMemInfo(){
             this(0,0,0);
         }
     }
-    public static MemInfo memInfo(){
+    public static SystemMemInfo systemMemInfo(){
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader("/proc/meminfo"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            return new MemInfo();
+            return new SystemMemInfo();
         }
         int total = 0;
         int free = 0;
@@ -155,7 +161,7 @@ public final class EnvInfo {
                 s = reader.readLine();
             }
         }catch (Exception e){
-            return new MemInfo();
+            return new SystemMemInfo();
         }finally {
 
             try {
@@ -164,7 +170,67 @@ public final class EnvInfo {
                 e.printStackTrace();
             }
         }
-        return new MemInfo(total, free, cached);
+        return new SystemMemInfo(total, free, cached);
     }
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+    public static AppMemInfo memInfo(Context ctx) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+            return new AppMemInfo(0, 0, 0);
+        }
+        ActivityManager am = (ActivityManager) ctx.getSystemService(Context.ACTIVITY_SERVICE);
+        if (am == null) {
+            return new AppMemInfo(0, 0, 0);
+        }
+        ActivityManager.MemoryInfo mi = new ActivityManager.MemoryInfo();
+        am.getMemoryInfo(mi);
+
+        return new AppMemInfo(mi.totalMem, mi.totalMem - mi.availMem, mi.threshold);
+
+    }
+
+    public static class AppMemInfo {
+        public final long total;
+        public final long used;
+        public final long threshold;
+
+        public AppMemInfo(long total, long used, long threshold) {
+            this.total = total;
+            this.used = used;
+            this.threshold = threshold;
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.CUPCAKE)
+    public static boolean isBackground(Context context) {
+        if (context == null) {
+            return true;
+        }
+        String pkgName = context.getPackageName();
+        if (pkgName == null) {
+            return true;
+        }
+        ActivityManager activityManager = (ActivityManager) context
+                .getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> appProcesses = activityManager
+                .getRunningAppProcesses();
+
+        for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
+            if (pkgName.equals(appProcess.processName)) {
+                if (appProcess.importance != ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+                    Log.i(context.getPackageName(), "Background"
+                            + appProcess.processName);
+                    return true;
+                } else {
+                    Log.i(context.getPackageName(), "Foreground"
+                            + appProcess.processName);
+                    return false;
+                }
+            }
+        }
+
+        return false;
+    }
+
 
 }

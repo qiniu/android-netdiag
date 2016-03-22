@@ -15,7 +15,7 @@ public class EnvInfoTest extends AndroidTestCase {
     }
 
     public void testMem(){
-        EnvInfo.MemInfo mem = EnvInfo.memInfo();
+        EnvInfo.SystemMemInfo mem = EnvInfo.systemMemInfo();
         Assert.assertTrue(mem.total>mem.free && mem.total>mem.cached);
         Assert.assertTrue(mem.free>0 && mem.cached>0);
     }
