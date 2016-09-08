@@ -1,6 +1,7 @@
 package com.qiniu.android.netdiag;
 
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 
@@ -13,10 +14,11 @@ import java.net.URL;
  * Created by bailong on 16/2/24.
  */
 public final class Util {
-    private static final int Max = 64*1024;
+    private static final int Max = 64 * 1024;
+
     static String httpGetString(String url) throws IOException {
         byte[] b = httpGet(url);
-        if (b == null){
+        if (b == null) {
             return null;
         }
         return new String(b);
@@ -33,7 +35,7 @@ public final class Util {
         }
 
         int length = httpConn.getContentLength();
-        if (length < 0){
+        if (length < 0) {
             length = Max;
         }
         if (length > Max) {
@@ -46,7 +48,7 @@ public final class Util {
         if (read <= 0) {
             return null;
         }
-        if (read < data.length){
+        if (read < data.length) {
             byte[] b = new byte[read];
             System.arraycopy(data, 0, b, 0, read);
             return b;
@@ -59,7 +61,11 @@ public final class Util {
         h.post(r);
     }
 
-    static void runInBack(Runnable r){
-        AsyncTask.execute(r);
+    static void runInBack(Runnable r) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+            AsyncTask.execute(r);
+        } else {
+            new Thread(r).start();
+        }
     }
 }

@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class HttpTest extends AndroidTestCase {
     private HttpPing.Result r;
+
     public void testOK() throws Exception {
         final CountDownLatch c = new CountDownLatch(1);
 
@@ -25,8 +26,8 @@ public class HttpTest extends AndroidTestCase {
         });
         c.await(100, TimeUnit.SECONDS);
         Assert.assertEquals(200, r.code);
-        Assert.assertTrue(r.duration> 0);
-        Assert.assertTrue(r.headers.size()> 0);
+        Assert.assertTrue(r.duration > 0);
+        Assert.assertTrue(r.headers.size() > 0);
         Assert.assertTrue(r.body.length > 0);
     }
 }

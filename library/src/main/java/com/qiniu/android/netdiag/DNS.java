@@ -21,7 +21,7 @@ public final class DNS {
     private static final String C_Start = "<tr>";
     private static final String C_End = "</table>";
 
-    private static  String getDiagUrl() throws IOException {
+    private static String getDiagUrl() throws IOException {
         String fetch = Util.httpGetString("http://ns.pbt.cachecn.net/fast_tools/fetch_ldns_diag_client.php");
         if (fetch == null) {
             return null;
@@ -41,11 +41,11 @@ public final class DNS {
     public static String check() {
         String f = null;
         try {
-           f  = getDiagUrl();
+            f = getDiagUrl();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (f == null){
+        if (f == null) {
             return "get fetch url failed";
         }
         String result = null;
@@ -55,7 +55,7 @@ public final class DNS {
             e.printStackTrace();
         }
 
-        if (result == null){
+        if (result == null) {
             return "check server error";
         }
 
@@ -176,7 +176,7 @@ public final class DNS {
         String[] ret = new String[addresses.length];
         for (int i = 0; i < ret.length; i++) {
             ret[i] = addresses[i].toString();
-            if (ret[i].indexOf('/') == 0){
+            if (ret[i].indexOf('/') == 0) {
                 ret[i] = ret[i].substring(1);
             }
         }

@@ -12,7 +12,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class NsLookupTest extends AndroidTestCase {
     private NsLookup.Result result;
-    public void testOK(){
+
+    public void testOK() {
         final CountDownLatch c = new CountDownLatch(1);
 
         NsLookup.start("www.baidu.com", new TestLogger(), new NsLookup.Callback() {
@@ -28,7 +29,7 @@ public class NsLookupTest extends AndroidTestCase {
             e.printStackTrace();
         }
         Assert.assertEquals(0, result.code);
-        Assert.assertTrue(result.records.length>0);
-        Assert.assertTrue(result.duration>0);
+        Assert.assertTrue(result.records.length > 0);
+        Assert.assertTrue(result.duration > 0);
     }
 }

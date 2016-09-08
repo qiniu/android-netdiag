@@ -10,8 +10,9 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by bailong on 16/3/8.
  */
-public class TcpPingTest extends AndroidTestCase{
+public class TcpPingTest extends AndroidTestCase {
     private TcpPing.Result result;
+
     public void testOK() throws InterruptedException {
         final CountDownLatch c = new CountDownLatch(1);
         TcpPing.start("www.baidu.com", new TestLogger(), new TcpPing.Callback() {
@@ -24,9 +25,9 @@ public class TcpPingTest extends AndroidTestCase{
         c.await(200, TimeUnit.SECONDS);
         Assert.assertEquals(0, result.code);
         Assert.assertTrue(result.avgTime >= result.minTime &&
-                result.maxTime>= result.avgTime);
+                result.maxTime >= result.avgTime);
         Assert.assertEquals(3, result.count);
-        Assert.assertTrue(result.ip.length()>=8);
+        Assert.assertTrue(result.ip.length() >= 8);
     }
 
     public void testStop() throws InterruptedException {
@@ -42,7 +43,7 @@ public class TcpPingTest extends AndroidTestCase{
         c.await(200, TimeUnit.SECONDS);
         Assert.assertEquals(TcpPing.Stopped, result.code);
         Assert.assertTrue(result.avgTime >= result.minTime &&
-                result.maxTime>= result.avgTime);
+                result.maxTime >= result.avgTime);
         Assert.assertTrue(result.count >= 0);
     }
 

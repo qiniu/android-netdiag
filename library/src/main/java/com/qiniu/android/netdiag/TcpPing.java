@@ -10,7 +10,7 @@ import java.net.UnknownHostException;
 /**
  * Created by bailong on 16/2/24.
  */
-public final class TcpPing implements Task{
+public final class TcpPing implements Task {
 
     public static final int TimeOut = -3;
     public static final int NotReach = -2;
@@ -31,13 +31,13 @@ public final class TcpPing implements Task{
         this.output = output;
     }
 
-    public static Task start(String host, Output output, Callback complete){
+    public static Task start(String host, Output output, Callback complete) {
         return start(host, 80, 3, output, complete);
     }
 
     public static Task start(String host, int port, int count
-            , Output output, Callback complete){
-        final TcpPing t = new TcpPing(host, port, count,output, complete);
+            , Output output, Callback complete) {
+        final TcpPing t = new TcpPing(host, port, count, output, complete);
         Util.runInBack(new Runnable() {
             @Override
             public void run() {
@@ -47,7 +47,7 @@ public final class TcpPing implements Task{
         return t;
     }
 
-    private void run(){
+    private void run() {
         InetAddress[] addrs = null;
         try {
             addrs = InetAddress.getAllByName(host);
@@ -71,12 +71,12 @@ public final class TcpPing implements Task{
         for (int i = 0; i < count && !stopped; i++) {
             long start = System.currentTimeMillis();
             try {
-                connect(server, 20*1000);
+                connect(server, 20 * 1000);
             } catch (IOException e) {
                 e.printStackTrace();
                 output.write(e.getMessage());
                 int code = NotReach;
-                if (e instanceof  SocketTimeoutException){
+                if (e instanceof SocketTimeoutException) {
                     code = TimeOut;
                 }
                 final int code2 = code;
@@ -89,17 +89,17 @@ public final class TcpPing implements Task{
                 return;
             }
             long end = System.currentTimeMillis();
-            times[i] = (int)(end -start);
+            times[i] = (int) (end - start);
             index = i;
             try {
-                if (!stopped){
+                if (!stopped) {
                     Thread.sleep(100 - (end - start));
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        if (index == -1){
+        if (index == -1) {
             complete.complete(new Result(Stopped, ip, 0, 0, 0, 0));
             return;
         }
@@ -107,24 +107,24 @@ public final class TcpPing implements Task{
         complete.complete(buildResult(times, index, ip));
     }
 
-    private Result buildResult(int[] times, int index, String ip){
+    private Result buildResult(int[] times, int index, String ip) {
         int sum = 0;
         int min = 1000000;
         int max = 0;
         for (int i = 0; i <= index; i++) {
             int t = times[i];
-            if (t > max){
+            if (t > max) {
                 max = t;
             }
-            if (t< min){
+            if (t < min) {
                 min = t;
             }
             sum += t;
         }
-        return new Result(0, ip, max, min, sum/(index+1), index+1);
+        return new Result(0, ip, max, min, sum / (index + 1), index + 1);
     }
 
-    private void connect(InetSocketAddress socketAddress, int timeOut) throws IOException{
+    private void connect(InetSocketAddress socketAddress, int timeOut) throws IOException {
         Socket socket = null;
         try {
             socket = new Socket();
@@ -148,7 +148,11 @@ public final class TcpPing implements Task{
         stopped = true;
     }
 
-    public static final class Result{
+    public interface Callback {
+        void complete(Result r);
+    }
+
+    public static final class Result {
         public final int code;
         public final String ip;
         public final int maxTime;
@@ -165,9 +169,5 @@ public final class TcpPing implements Task{
             this.avgTime = avgTime;
             this.count = count;
         }
-    }
-
-    public interface Callback{
-        void complete(Result r);
     }
 }

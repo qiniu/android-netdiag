@@ -10,21 +10,28 @@ import java.net.UnknownHostException;
 /**
  * Created by bailong on 16/2/24.
  */
-public final class NsLookup{
+public final class NsLookup {
     private final String domain;
     private final String serverIp;
     private final Output output;
     private final Callback complete;
 //    private volatile boolean stopped;
 
-    public static void start(String domain, Output output, Callback complete){
+    private NsLookup(String domain, String serverIp, Output output, Callback complete) {
+        this.domain = domain;
+        this.serverIp = serverIp;
+        this.output = output;
+        this.complete = complete;
+    }
+
+    public static void start(String domain, Output output, Callback complete) {
         start(domain, null, output, complete);
     }
 
-    public static void start(String domain, String serverIp, Output output, Callback complete){
-        if (serverIp == null){
+    public static void start(String domain, String serverIp, Output output, Callback complete) {
+        if (serverIp == null) {
             String[] s = DNS.local();
-            if (s != null){
+            if (s != null) {
                 serverIp = s[0];
             }
         }
@@ -37,9 +44,8 @@ public final class NsLookup{
         });
     }
 
-
-    private void run(){
-        if (serverIp == null){
+    private void run() {
+        if (serverIp == null) {
             Result r = new Result(-1, 0, null);
             complete.complete(r);
             return;
@@ -71,14 +77,11 @@ public final class NsLookup{
 
     }
 
-    private NsLookup(String domain, String serverIp, Output output, Callback complete){
-        this.domain = domain;
-        this.serverIp = serverIp;
-        this.output = output;
-        this.complete = complete;
+    public interface Callback {
+        void complete(Result result);
     }
 
-    public static class Result{
+    public static class Result {
         public final int code;
         public final int duration;
         public final Record[] records;
@@ -88,9 +91,5 @@ public final class NsLookup{
             this.duration = duration;
             this.records = records;
         }
-    }
-
-    public interface Callback{
-        void complete(Result result);
     }
 }

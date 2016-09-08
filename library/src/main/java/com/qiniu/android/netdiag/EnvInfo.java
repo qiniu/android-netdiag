@@ -17,23 +17,13 @@ import java.util.List;
  * Created by bailong on 16/3/14.
  */
 public final class EnvInfo {
-    public static class CpuInfo{
-        public final float total;
-        public final float current;
-
-        public CpuInfo(float total, float current) {
-            this.total = total;
-            this.current = current;
-        }
-    }
-
     public static CpuInfo cpuInfo() {
         BufferedReader reader = null;
         long work1, total1, work2, total2;
         try {
             reader = new BufferedReader(new FileReader("/proc/stat"));
             String[] sa = reader.readLine().split("[ ]+", 9);
-            work1  = Long.parseLong(sa[1]) + Long.parseLong(sa[2]) + Long.parseLong(sa[3]);
+            work1 = Long.parseLong(sa[1]) + Long.parseLong(sa[2]) + Long.parseLong(sa[3]);
             total1 = work1 + Long.parseLong(sa[4]) + Long.parseLong(sa[5]) + Long.parseLong(sa[6]) + Long.parseLong(sa[7]);
         } catch (IOException e) {
             e.printStackTrace();
@@ -78,7 +68,7 @@ public final class EnvInfo {
         try {
             reader = new BufferedReader(new FileReader("/proc/stat"));
             String[] sa = reader.readLine().split("[ ]+", 9);
-            work2  = Long.parseLong(sa[1]) + Long.parseLong(sa[2]) + Long.parseLong(sa[3]);
+            work2 = Long.parseLong(sa[1]) + Long.parseLong(sa[2]) + Long.parseLong(sa[3]);
             total2 = work2 + Long.parseLong(sa[4]) + Long.parseLong(sa[5]) + Long.parseLong(sa[6]) + Long.parseLong(sa[7]);
         } catch (IOException e) {
             e.printStackTrace();
@@ -112,31 +102,16 @@ public final class EnvInfo {
                 }
             }
         }
-        long t = total2 -total1;
-        float percent = (work2 - work1)*100/(float)t;
-        float currentPercent = (workP2-workP1)*100/(float)t;
-        if (percent < 0 || percent> 100){
+        long t = total2 - total1;
+        float percent = (work2 - work1) * 100 / (float) t;
+        float currentPercent = (workP2 - workP1) * 100 / (float) t;
+        if (percent < 0 || percent > 100) {
             return new CpuInfo(0, 0);
         }
         return new CpuInfo(percent, currentPercent);
     }
 
-    public static class SystemMemInfo{
-        public final int total;
-        public final int free;
-        public final int cached;
-
-        public SystemMemInfo(int total, int free, int cached) {
-            this.total = total;
-            this.free = free;
-            this.cached = cached;
-        }
-
-        public SystemMemInfo(){
-            this(0,0,0);
-        }
-    }
-    public static SystemMemInfo systemMemInfo(){
+    public static SystemMemInfo systemMemInfo() {
         BufferedReader reader = null;
         try {
             reader = new BufferedReader(new FileReader("/proc/meminfo"));
@@ -155,14 +130,14 @@ public final class EnvInfo {
                 } else if (s.startsWith("MemFree:"))
                     free = Integer.parseInt(s.split("[ ]+", 3)[1]);
 
-                else if (s.startsWith("Cached:")){
+                else if (s.startsWith("Cached:")) {
                     cached = Integer.parseInt(s.split("[ ]+", 3)[1]);
                 }
                 s = reader.readLine();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             return new SystemMemInfo();
-        }finally {
+        } finally {
 
             try {
                 reader.close();
@@ -187,18 +162,6 @@ public final class EnvInfo {
 
         return new AppMemInfo(mi.totalMem, mi.totalMem - mi.availMem, mi.threshold);
 
-    }
-
-    public static class AppMemInfo {
-        public final long total;
-        public final long used;
-        public final long threshold;
-
-        public AppMemInfo(long total, long used, long threshold) {
-            this.total = total;
-            this.used = used;
-            this.threshold = threshold;
-        }
     }
 
     @TargetApi(Build.VERSION_CODES.CUPCAKE)
@@ -230,6 +193,44 @@ public final class EnvInfo {
         }
 
         return false;
+    }
+
+    public static class CpuInfo {
+        public final float total;
+        public final float current;
+
+        public CpuInfo(float total, float current) {
+            this.total = total;
+            this.current = current;
+        }
+    }
+
+    public static class SystemMemInfo {
+        public final int total;
+        public final int free;
+        public final int cached;
+
+        public SystemMemInfo(int total, int free, int cached) {
+            this.total = total;
+            this.free = free;
+            this.cached = cached;
+        }
+
+        public SystemMemInfo() {
+            this(0, 0, 0);
+        }
+    }
+
+    public static class AppMemInfo {
+        public final long total;
+        public final long used;
+        public final long threshold;
+
+        public AppMemInfo(long total, long used, long threshold) {
+            this.total = total;
+            this.used = used;
+            this.threshold = threshold;
+        }
     }
 
 

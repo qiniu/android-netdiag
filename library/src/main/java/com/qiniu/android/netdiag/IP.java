@@ -8,11 +8,11 @@ import java.net.InetAddress;
  * Created by bailong on 16/2/24.
  */
 public final class IP {
-    public static String external() throws IOException{
+    public static String external() throws IOException {
         return Util.httpGetString("http://whatismyip.akamai.com");
     }
 
-    public static String local(){
+    public static String local() {
         DatagramSocket socket;
         try {
             socket = new DatagramSocket();

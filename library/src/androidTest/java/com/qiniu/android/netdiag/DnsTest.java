@@ -16,7 +16,7 @@ public class DnsTest extends AndroidTestCase {
         System.out.println(ip[0]);
     }
 
-    public void testCheck(){
+    public void testCheck() {
         String s = DNS.check();
         Assert.assertNotNull(s);
         Assert.assertTrue(!"".equals(s));

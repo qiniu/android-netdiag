@@ -86,6 +86,10 @@ public final class HttpPing implements Task {
         stopped = true;
     }
 
+    public interface Callback {
+        void complete(Result result);
+    }
+
     public static class Result {
         public final int code;
         public final Map<String, List<String>> headers;
@@ -101,9 +105,5 @@ public final class HttpPing implements Task {
             this.duration = duration;
             this.errorMessage = errorMessage;
         }
-    }
-
-    public interface Callback {
-        void complete(Result result);
     }
 }

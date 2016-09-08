@@ -1,41 +1,36 @@
 package com.qiniu.android.netdiag;
 
-import android.net.Uri;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Locale;
-import java.net.Socket;
 
 /**
  * Created by bailong on 16/2/24.
  */
-public final class Ping implements Task{
+public final class Ping implements Task {
     private final String address;
     private final int count;
     private final Output output;
     private final Callback complete;
     private volatile boolean stopped;
 
-    public static class Result{
-        public final String result;
+    private Ping(String address, int count,
+                 Output output, Callback complete) {
 
-        private Result(String result) {
-            this.result = result;
-        }
+        this.address = address;
+        this.count = count;
+        this.output = output;
+        this.complete = complete;
+        this.stopped = false;
     }
 
-    public interface Callback{
-        void complete(Result r);
-    }
-
-    public static Task start(String address, Output output, Callback complete){
+    public static Task start(String address, Output output, Callback complete) {
         return start(address, 10, output, complete);
     }
 
     public static Task start(String address, int count,
-                             Output output, Callback complete){
+                             Output output, Callback complete) {
         final Ping p = new Ping(address, count, output, complete);
         Util.runInBack(new Runnable() {
             @Override
@@ -85,7 +80,7 @@ public final class Ping implements Task{
                 if (reader != null) {
                     reader.close();
                 }
-                if (process != null){
+                if (process != null) {
                     process.destroy();
                 }
             } catch (Exception e) {
@@ -95,18 +90,20 @@ public final class Ping implements Task{
         return str.toString();
     }
 
-    private Ping(String address, int count,
-                 Output output, Callback complete){
-
-        this.address = address;
-        this.count = count;
-        this.output = output;
-        this.complete = complete;
-        this.stopped = false;
-    }
-
     @Override
     public void stop() {
         stopped = true;
+    }
+
+    public interface Callback {
+        void complete(Result r);
+    }
+
+    public static class Result {
+        public final String result;
+
+        private Result(String result) {
+            this.result = result;
+        }
     }
 }

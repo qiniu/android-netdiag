@@ -62,14 +62,14 @@ public final class Record {
     }
 
 
-    public String toString(){
+    public String toString() {
         String t;
-        if (type == TYPE_A){
-            t= "A";
-        }else if (type == TYPE_CNAME){
+        if (type == TYPE_A) {
+            t = "A";
+        } else if (type == TYPE_CNAME) {
             t = "CNAME";
-        }else {
-            t = "type-"+type;
+        } else {
+            t = "type-" + type;
         }
 
         return String.format(Locale.ENGLISH, "%s\t%s\t%d", t, value, ttl);

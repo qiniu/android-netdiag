@@ -1,25 +1,65 @@
+import java.util.regex.Matcher
+
 apply plugin: 'com.android.library'
+
+def versionName() {
+    String config = 'library/src/main/java/com/qiniu/android/netdiag/Version.java'
+    String fileContents = new File(config).text
+    Matcher myMatcher = fileContents =~ /VERSION = "(.+)";/
+    String version = myMatcher[0][1]
+    println(version)
+    return version
+}
+
+def versionNameToCode(String version) {
+    String v = version.replaceAll(/\./, '')
+    return v.toLong()
+}
+
+String version = versionName()
+int code = versionNameToCode(version)
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
-
+    buildToolsVersion '23.0.1'
     defaultConfig {
-        minSdkVersion 11
+        //applicationId "com.qiniu.android"
+        minSdkVersion 9
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode code
+        versionName version
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
+
+    lintOptions {
+        warning 'InvalidPackage'
     }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    compile 'com.android.support:appcompat-v7:21.0.3'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-//    compile 'com.android.support:appcompat-v7:23.1.1'
 }
+
+task releaseJar(type: Jar, dependsOn: 'build') {
+    //指定生成的jar名
+    baseName 'android-netdiag-' + version
+    //去掉不需要打包的目录和文件
+    exclude('test/', 'BuildConfig.class', 'R.class')
+    //去掉R$开头的文件
+    exclude { it.name.startsWith('R$'); }
+}
+
+android.libraryVariants.all { variant ->
+    def name = variant.buildType.name
+    def task = project.tasks.create "jar${name.capitalize()}", Jar
+    task.dependsOn variant.javaCompile
+    task.from variant.javaCompile.destinationDir
+    task.exclude '**/R.*', '**/R$*.*', '**/BuildConfig.class'
+    artifacts.add('archives', task);
+}
+
+setProperty('VERSION_NAME', version)
+setProperty('VERSION_CODE', code)
+
+apply from: '../mvn_push.gradle'

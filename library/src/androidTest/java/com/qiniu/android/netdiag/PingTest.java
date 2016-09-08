@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class PingTest extends AndroidTestCase {
     private Ping.Result result;
+
     public void testOK() throws InterruptedException {
         final CountDownLatch c = new CountDownLatch(1);
         Task t = Ping.start("www.baidu.com", 10, new TestLogger(), new Ping.Callback() {
