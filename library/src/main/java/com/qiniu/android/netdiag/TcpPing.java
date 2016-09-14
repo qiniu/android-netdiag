@@ -23,7 +23,7 @@ public final class TcpPing implements Task {
     private boolean stopped;
     private Output output;
 
-    public TcpPing(String host, int port, int count, Output output, Callback complete) {
+    private TcpPing(String host, int port, int count, Output output, Callback complete) {
         this.host = host;
         this.port = port;
         this.count = count;
