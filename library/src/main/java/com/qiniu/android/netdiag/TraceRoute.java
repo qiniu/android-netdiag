@@ -23,7 +23,7 @@ public final class TraceRoute implements Task {
     private final Output output;
     private final Callback complete;
     private volatile boolean stopped = false;
-    private Result result = new Result();
+    private Result result = null;
 
     private TraceRoute(String address, Output output, Callback complete) {
         this.address = address;
@@ -159,10 +159,11 @@ public final class TraceRoute implements Task {
         } catch (UnknownHostException e) {
             e.printStackTrace();
             updateOut("unknown host " + this.address);
-            this.complete.complete(result);
+            this.complete.complete(new Result(""));
             return;
         }
 
+        result = new Result(ip);
         Process p;
         while (hop < MaxHop && !stopped) {
             long t1 = System.currentTimeMillis();
@@ -207,6 +208,11 @@ public final class TraceRoute implements Task {
     public static class Result {
         private final StringBuilder builder = new StringBuilder();
         private String allData;
+        public final String ip;
+
+        public Result(String ip) {
+            this.ip = ip;
+        }
 
         public String content() {
             if (allData != null) {
