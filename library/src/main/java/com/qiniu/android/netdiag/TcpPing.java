@@ -57,7 +57,7 @@ public final class TcpPing implements Task {
             Util.runInMain(new Runnable() {
                 @Override
                 public void run() {
-                    complete.complete(new Result(UnkownHost, "", 0, 0, 0, 0));
+                    complete.complete(new Result(UnkownHost, "", 0, 0, 0, 0, 0));
                 }
             });
             return;
@@ -83,7 +83,7 @@ public final class TcpPing implements Task {
                 Util.runInMain(new Runnable() {
                     @Override
                     public void run() {
-                        complete.complete(new Result(code2, ip, 0, 0, 0, 0));
+                        complete.complete(new Result(code2, ip, 0, 0, 0, 0, 0));
                     }
                 });
                 return;
@@ -100,7 +100,7 @@ public final class TcpPing implements Task {
             }
         }
         if (index == -1) {
-            complete.complete(new Result(Stopped, ip, 0, 0, 0, 0));
+            complete.complete(new Result(Stopped, ip, 0, 0, 0, 0, 0));
             return;
         }
 
@@ -121,7 +121,7 @@ public final class TcpPing implements Task {
             }
             sum += t;
         }
-        return new Result(0, ip, max, min, sum / (index + 1), index + 1);
+        return new Result(0, ip, max, min, sum / (index + 1), 0, index + 1);
     }
 
     private void connect(InetSocketAddress socketAddress, int timeOut) throws IOException {
@@ -158,15 +158,17 @@ public final class TcpPing implements Task {
         public final int maxTime;
         public final int minTime;
         public final int avgTime;
+        public final int stddevTime;
         public final int count;
 
         public Result(int code, String ip, int maxTime, int minTime, int avgTime,
-                      int count) {
+                      int stddevTime, int count) {
             this.code = code;
             this.ip = ip;
             this.maxTime = maxTime;
             this.minTime = minTime;
             this.avgTime = avgTime;
+            this.stddevTime = stddevTime;
             this.count = count;
         }
     }

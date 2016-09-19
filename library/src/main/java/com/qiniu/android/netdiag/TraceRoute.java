@@ -78,7 +78,7 @@ public final class TraceRoute implements Task {
     }
 
     private Process executePingCmd(String host, int hop) throws IOException {
-        String command = "ping -c 1 -t " + hop + " " + host;
+        String command = "ping -n -c 1 -t " + hop + " " + host;
 //        System.out.println("cmd> " + command);
         return getRuntime().exec(command);
     }
