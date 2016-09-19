@@ -3,7 +3,7 @@
 [![@qiniu on weibo](http://img.shields.io/badge/weibo-%40qiniutek-blue.svg)](http://weibo.com/qiniutek)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg)](LICENSE.md)
 [![Build Status](https://travis-ci.org/qiniu/android-netdiag.svg?branch=master)](https://travis-ci.org/qiniu/android-netdiag)
-[![Latest Stable Version](http://img.shields.io/maven-central/v/com.qiniu/qiniu-android-netdiag.svg)](https://github.com/qiniu/android-netdiag/releases)
+[![Latest Stable Version](http://img.shields.io/maven-central/v/com.qiniu/android-netdiag.svg)](https://github.com/qiniu/android-netdiag/releases)
 
 ## [中文](https://github.com/qiniu/android-netdiag/blob/master/README_cn.md)
 
