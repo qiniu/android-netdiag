@@ -83,7 +83,7 @@ public final class Ping implements Task {
             errorReader = new BufferedReader(new InputStreamReader(
                     process.getErrorStream()));
             while ((line = reader.readLine()) != null) {
-                str.append(line);
+                str.append(line).append("\n");
                 output.write(line);
             }
             while ((line = errorReader.readLine()) != null) {
@@ -176,13 +176,18 @@ public final class Ping implements Task {
 
         private void parseResult() {
             String[] rs = result.split("\n");
-            for (String s : rs) {
-                if (s.contains(packetWords)) {
-                    parsePacketLine(s);
-                } else if (s.contains(lastLinePrefix)) {
-                    parseRttLine(s);
+            try {
+                for (String s : rs) {
+                    if (s.contains(packetWords)) {
+                        parsePacketLine(s);
+                    } else if (s.contains(lastLinePrefix)) {
+                        parseRttLine(s);
+                    }
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+
         }
     }
 }

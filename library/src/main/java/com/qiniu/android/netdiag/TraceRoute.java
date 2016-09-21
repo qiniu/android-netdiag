@@ -72,6 +72,11 @@ public final class TraceRoute implements Task {
         return t;
     }
 
+    private static String getIp(String host) throws UnknownHostException {
+        InetAddress i = InetAddress.getByName(host);
+        return i.getHostAddress();
+    }
+
     @Override
     public void stop() {
         stopped = true;
@@ -146,11 +151,6 @@ public final class TraceRoute implements Task {
         result.append(str);
     }
 
-    private static String getIp(String host) throws UnknownHostException {
-        InetAddress i = InetAddress.getByName(host);
-        return i.getHostAddress();
-    }
-
     private void run() {
         int hop = 1;
         String ip = null;
@@ -201,14 +201,15 @@ public final class TraceRoute implements Task {
         }
         this.complete.complete(result);
     }
+
     public interface Callback {
         void complete(Result r);
     }
 
     public static class Result {
+        public final String ip;
         private final StringBuilder builder = new StringBuilder();
         private String allData;
-        public final String ip;
 
         public Result(String ip) {
             this.ip = ip;
