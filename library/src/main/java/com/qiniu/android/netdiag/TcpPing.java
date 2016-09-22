@@ -57,7 +57,7 @@ public final class TcpPing implements Task {
             Util.runInMain(new Runnable() {
                 @Override
                 public void run() {
-                    complete.complete(new Result(UnkownHost, "", 0, 0, 0, 0, 0));
+                    complete.complete(new Result(UnkownHost, "", 0, 0, 0, 0, 0, 0));
                 }
             });
             return;
@@ -68,6 +68,7 @@ public final class TcpPing implements Task {
         output.write("connect to " + ip + ":" + port);
         int[] times = new int[count];
         int index = -1;
+        int dropped = 0;
         for (int i = 0; i < count && !stopped; i++) {
             long start = System.currentTimeMillis();
             try {
@@ -80,13 +81,17 @@ public final class TcpPing implements Task {
                     code = TimeOut;
                 }
                 final int code2 = code;
-                Util.runInMain(new Runnable() {
-                    @Override
-                    public void run() {
-                        complete.complete(new Result(code2, ip, 0, 0, 0, 0, 0));
-                    }
-                });
-                return;
+                if (i == 0){
+                    Util.runInMain(new Runnable() {
+                        @Override
+                        public void run() {
+                            complete.complete(new Result(code2, ip, 0, 0, 0, 0, 1, 1));
+                        }
+                    });
+                    return;
+                }else{
+                    dropped++;
+                }
             }
             long end = System.currentTimeMillis();
             times[i] = (int) (end - start);
@@ -100,14 +105,14 @@ public final class TcpPing implements Task {
             }
         }
         if (index == -1) {
-            complete.complete(new Result(Stopped, ip, 0, 0, 0, 0, 0));
+            complete.complete(new Result(Stopped, ip, 0, 0, 0, 0, 0, 0));
             return;
         }
 
-        complete.complete(buildResult(times, index, ip));
+        complete.complete(buildResult(times, index, ip, dropped));
     }
 
-    private Result buildResult(int[] times, int index, String ip) {
+    private Result buildResult(int[] times, int index, String ip, int dropped) {
         int sum = 0;
         int min = 1000000;
         int max = 0;
@@ -121,7 +126,7 @@ public final class TcpPing implements Task {
             }
             sum += t;
         }
-        return new Result(0, ip, max, min, sum / (index + 1), 0, index + 1);
+        return new Result(0, ip, max, min, sum / (index + 1), 0, index + 1, dropped);
     }
 
     private void connect(InetSocketAddress socketAddress, int timeOut) throws IOException {
@@ -160,9 +165,10 @@ public final class TcpPing implements Task {
         public final int avgTime;
         public final int stddevTime;
         public final int count;
+        public final int dropped;
 
         public Result(int code, String ip, int maxTime, int minTime, int avgTime,
-                      int stddevTime, int count) {
+                      int stddevTime, int count, int dropped) {
             this.code = code;
             this.ip = ip;
             this.maxTime = maxTime;
@@ -170,6 +176,7 @@ public final class TcpPing implements Task {
             this.avgTime = avgTime;
             this.stddevTime = stddevTime;
             this.count = count;
+            this.dropped = dropped;
         }
     }
 }

@@ -7,90 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="081a3187-1b09-43c3-90b5-fb5e90fc8cd5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/allclasses-frame.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/allclasses-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/allclasses-noframe.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/allclasses-noframe.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/DNS.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/DNS.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/EnvInfo.AppMemInfo.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/EnvInfo.AppMemInfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/EnvInfo.CpuInfo.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/EnvInfo.CpuInfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/EnvInfo.SystemMemInfo.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/EnvInfo.SystemMemInfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/EnvInfo.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/EnvInfo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/HttpPing.Callback.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/HttpPing.Callback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/HttpPing.Result.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/HttpPing.Result.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/HttpPing.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/HttpPing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/IP.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/IP.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/NsLookup.Callback.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/NsLookup.Callback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/NsLookup.Result.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/NsLookup.Result.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/NsLookup.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/NsLookup.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Output.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Output.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Ping.Callback.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Ping.Callback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Ping.Result.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Ping.Result.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Ping.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Ping.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/RtmpPing.Callback.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/RtmpPing.Callback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/RtmpPing.Result.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/RtmpPing.Result.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/RtmpPing.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/RtmpPing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Task.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Task.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TcpPing.Callback.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TcpPing.Callback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TcpPing.Result.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TcpPing.Result.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TcpPing.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TcpPing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TraceRoute.Callback.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TraceRoute.Callback.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TraceRoute.Result.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TraceRoute.Result.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TraceRoute.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/TraceRoute.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Util.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Util.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Version.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/Version.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/DnsException.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/DnsException.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/Record.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/Record.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/Resolver.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/Resolver.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/package-frame.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/package-summary.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/package-tree.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/localdns/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/package-frame.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/package-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/package-summary.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/package-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/package-tree.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/com/qiniu/android/netdiag/package-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/constant-values.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/constant-values.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/deprecated-list.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/deprecated-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/index-all.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/index-all.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/overview-frame.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/overview-frame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/overview-summary.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/overview-summary.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/overview-tree.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/overview-tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/docs/javadoc/serialized-form.html" afterPath="$PROJECT_DIR$/library/build/docs/javadoc/serialized-form.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/blame/res/androidTest/debug/multi/values.json" afterPath="$PROJECT_DIR$/library/build/intermediates/blame/res/androidTest/debug/multi/values.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugAndroidTestAssets/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugAndroidTestAssets/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugAndroidTestJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugAndroidTestJniLibFolders/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugAndroidTestResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugAndroidTestShaders/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugAndroidTestShaders/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeReleaseAssets/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeReleaseAssets/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeReleaseJniLibFolders/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeReleaseShaders/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeReleaseShaders/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/packageDebugResources/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/packageDebugResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/packageReleaseResources/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/packageReleaseResources/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/ivy.xml" afterPath="$PROJECT_DIR$/library/build/ivy.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/outputs/androidTest-results/connected/TEST-MI 2 - 5.0.2-library-.xml" afterPath="$PROJECT_DIR$/library/build/outputs/androidTest-results/connected/TEST-MI 2 - 5.0.2-library-.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/outputs/lint-results-debug.xml" afterPath="$PROJECT_DIR$/library/build/outputs/lint-results-debug.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/poms/pom-default.xml" afterPath="$PROJECT_DIR$/library/build/poms/pom-default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.DnsTest.html" afterPath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.DnsTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.EnvInfoTest.html" afterPath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.EnvInfoTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.HttpTest.html" afterPath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.HttpTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.IpTest.html" afterPath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.IpTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.NsLookupTest.html" afterPath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.NsLookupTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.PingTest.html" afterPath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.PingTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.RtmpPingTest.html" afterPath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.RtmpPingTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.TcpPingTest.html" afterPath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.TcpPingTest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.html" afterPath="$PROJECT_DIR$/library/build/reports/androidTests/connected/com.qiniu.android.netdiag.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/androidTests/connected/index.html" afterPath="$PROJECT_DIR$/library/build/reports/androidTests/connected/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/tests/debug/index.html" afterPath="$PROJECT_DIR$/library/build/reports/tests/debug/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/reports/tests/release/index.html" afterPath="$PROJECT_DIR$/library/build/reports/tests/release/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/src/androidTest/java/com/qiniu/android/netdiag/PingTest.java" afterPath="$PROJECT_DIR$/library/src/androidTest/java/com/qiniu/android/netdiag/PingTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/Ping.java" afterPath="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/Ping.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TraceRoute.java" afterPath="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TraceRoute.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/Version.java" afterPath="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/Version.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TcpPing.java" afterPath="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TcpPing.java" />
     </list>
     <ignored path="android-netdiag.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -188,21 +105,36 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Version.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Version.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/Version.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.20596206">
+            <state vertical-scroll-proportion="0.0">
               <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RtmpPingTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/src/androidTest/java/com/qiniu/android/netdiag/RtmpPingTest.java">
+      <file leaf-file-name="TcpPing.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TcpPing.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.88467616">
+              <caret line="139" column="19" selection-start-line="139" selection-start-column="19" selection-end-line="139" selection-end-column="19" />
+              <folding>
+                <element signature="e#1691#1886#0" expanded="true" />
+                <element signature="e#1885#1886#0" expanded="true" />
+                <element signature="e#2727#2957#0" expanded="true" />
+                <element signature="e#2956#2957#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TcpPingTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/src/androidTest/java/com/qiniu/android/netdiag/TcpPingTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="25" selection-end-column="7" />
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -213,16 +145,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="String.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/android_sdk/sources/android-23/java/lang/String.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1547" column="25" selection-start-line="1547" selection-start-column="25" selection-end-line="1547" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -2049,11 +1971,11 @@
         <option value="$PROJECT_DIR$/library/src/androidTest/java/com/qiniu/android/netdiag/EnvInfoTest.java" />
         <option value="$PROJECT_DIR$/library/src/androidTest/java/com/qiniu/android/netdiag/RtmpPingTest.java" />
         <option value="$PROJECT_DIR$/library/src/androidTest/java/com/qiniu/android/netdiag/TraceRouteTest.java" />
-        <option value="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TcpPing.java" />
         <option value="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TraceRoute.java" />
         <option value="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/Ping.java" />
         <option value="$PROJECT_DIR$/library/src/androidTest/java/com/qiniu/android/netdiag/PingTest.java" />
         <option value="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/Version.java" />
+        <option value="$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TcpPing.java" />
       </list>
     </option>
   </component>
@@ -2692,14 +2614,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="1276" height="777" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5032415" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39939487" sideWeight="0.50486225" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.49675852" order="2" side_tool="false" content_ui="tabs" />
@@ -2708,14 +2630,14 @@
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959481" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959481" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="AdbCommander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39939487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39939487" sideWeight="0.49513775" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2821,14 +2743,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/library/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="27" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -3115,14 +3029,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TcpPing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="75" selection-start-line="59" selection-start-column="75" selection-end-line="59" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TraceRoute.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.555555">
@@ -3219,9 +3125,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/Version.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20596206">
+        <state vertical-scroll-proportion="0.0">
           <caret line="4" column="1" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/src/androidTest/java/com/qiniu/android/netdiag/TcpPingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/src/main/java/com/qiniu/android/netdiag/TcpPing.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88467616">
+          <caret line="139" column="19" selection-start-line="139" selection-start-column="19" selection-end-line="139" selection-end-column="19" />
+          <folding>
+            <element signature="e#1691#1886#0" expanded="true" />
+            <element signature="e#1885#1886#0" expanded="true" />
+            <element signature="e#2727#2957#0" expanded="true" />
+            <element signature="e#2956#2957#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
