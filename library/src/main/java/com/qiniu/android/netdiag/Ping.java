@@ -146,16 +146,31 @@ public final class Ping implements Task {
             parseResult();
         }
 
+        static String trimNoneDigital(String s) {
+            if (s == null || s.length() == 0) {
+                return "";
+            }
+            char[] v = s.toCharArray();
+            char[] v2 = new char[v.length];
+            int j = 0;
+            for (char aV : v) {
+                if ((aV >= '0' && aV <= '9') || aV == '.') {
+                    v2[j++] = aV;
+                }
+            }
+            return new String(v2, 0, j);
+        }
+
         private void parseRttLine(String s) {
             String s2 = s.substring(lastLinePrefix.length(), s.length() - 3);
             String[] l = s2.split("/");
             if (l.length != 4) {
                 return;
             }
-            min = Float.parseFloat(l[0]);
-            avg = Float.parseFloat(l[1]);
-            max = Float.parseFloat(l[2]);
-            stddev = Float.parseFloat(l[3]);
+            min = Float.parseFloat(trimNoneDigital(l[0]));
+            avg = Float.parseFloat(trimNoneDigital(l[1]));
+            max = Float.parseFloat(trimNoneDigital(l[2]));
+            stddev = Float.parseFloat(trimNoneDigital(l[3]));
         }
 
         private void parsePacketLine(String s) {

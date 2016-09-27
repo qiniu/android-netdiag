@@ -81,7 +81,7 @@ public final class TcpPing implements Task {
                     code = TimeOut;
                 }
                 final int code2 = code;
-                if (i == 0){
+                if (i == 0) {
                     Util.runInMain(new Runnable() {
                         @Override
                         public void run() {
@@ -89,16 +89,17 @@ public final class TcpPing implements Task {
                         }
                     });
                     return;
-                }else{
+                } else {
                     dropped++;
                 }
             }
             long end = System.currentTimeMillis();
-            times[i] = (int) (end - start);
+            int t = (int) (end - start);
+            times[i] = t;
             index = i;
             try {
-                if (!stopped) {
-                    Thread.sleep(100 - (end - start));
+                if (!stopped || 100 > t) {
+                    Thread.sleep(100 - t);
                 }
             } catch (InterruptedException e) {
                 e.printStackTrace();

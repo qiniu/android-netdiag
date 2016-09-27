@@ -53,4 +53,10 @@ public class PingTest extends AndroidTestCase {
         Assert.assertEquals((int) pr.stddev, 27);
     }
 
+    public void testTrimNoneDigital() {
+        String s = "22.720/43.159/112.111/27.063 ms";
+        String s2 = Ping.Result.trimNoneDigital(s);
+        Assert.assertEquals("22.72043.159112.11127.063", s2);
+    }
+
 }
