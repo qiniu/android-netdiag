@@ -98,7 +98,7 @@ public final class TcpPing implements Task {
             times[i] = t;
             index = i;
             try {
-                if (!stopped || 100 > t) {
+                if (!stopped && 100 > t) {
                     Thread.sleep(100 - t);
                 }
             } catch (InterruptedException e) {
