@@ -1,5 +1,5 @@
 package com.qiniu.android.netdiag;
 
 public interface Version {
-    String VERSION = "0.0.6";
+    String VERSION = "0.1.0";
 }

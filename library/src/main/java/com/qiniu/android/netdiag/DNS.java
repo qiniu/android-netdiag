@@ -22,7 +22,7 @@ public final class DNS {
     private static final String C_End = "</table>";
 
     private static String getDiagUrl() throws IOException {
-        String fetch = Util.httpGetString("http://ns.pbt.cachecn.net/fast_tools/fetch_ldns_diag_client.php");
+        String fetch = Util.httpGetString("http://ns.pbt.cloudxns.net/fast_tools/fetch_ldns_diag_client.php");
         if (fetch == null) {
             return null;
         }
