@@ -159,7 +159,8 @@ public final class TraceRoute implements Task {
         } catch (UnknownHostException e) {
             e.printStackTrace();
             updateOut("unknown host " + this.address);
-            this.complete.complete(new Result(""));
+            result = new Result("");
+            this.complete.complete(result);
             return;
         }
 
