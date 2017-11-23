@@ -11,36 +11,40 @@
 
 ## 安装
 
-通过CocoaPods
+通过Gradle
 
-```ruby
+```groovy
+compile 'com.qiniu:android-netdiag:0.1.1'
 ```
 
 ## 使用方法
 ### Ping
-```
-
+```java
+Ping.start("www.baidu.com", 10, new TestLogger(), new Ping.Callback() {
+            @Override
+            public void complete(Ping.Result r) {
+                ...
+            }
+        });
 ```
 
 ### TcpPing
+```java
+TcpPing.start("www.baidu.com", new TestLogger(), new TcpPing.Callback() {
+            @Override
+            public void complete(TcpPing.Result r) {
+                ...
+            }
+        });
 ```
 
-```
-## 测试
-
-
-### 所有测试
+### 所有单元测试
 
 ``` bash
+./gradlew connectedAndroidTest
 
 ```
 
-### 指定测试
-
-可以在单元测试上修改，熟悉使用
-
-``` bash
-```
 
 ## 常见问题
 

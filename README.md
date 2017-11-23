@@ -16,25 +16,34 @@ Network Diagnosis Library，support Ping/TcpPing/Rtmp/TraceRoute/DNS/external IP
 gradle
 
 ```groovy
-
+compile 'com.qiniu:android-netdiag:0.1.1'
 ```
 
 ## Usage
 ### Ping
-```
-
+```java
+Ping.start("www.baidu.com", 10, new TestLogger(), new Ping.Callback() {
+            @Override
+            public void complete(Ping.Result r) {
+                ...
+            }
+        });
 ```
 
 ### TcpPing
+```java
+TcpPing.start("www.baidu.com", new TestLogger(), new TcpPing.Callback() {
+            @Override
+            public void complete(TcpPing.Result r) {
+                ...
+            }
+        });
 ```
-
-```
-## Test
-
 
 ### All Unit Test
 
 ``` bash
+./gradlew connectedAndroidTest
 
 ```
 
