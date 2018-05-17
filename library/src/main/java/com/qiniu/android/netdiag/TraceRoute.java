@@ -158,8 +158,8 @@ public final class TraceRoute implements Task {
             ip = getIp(this.address);
         } catch (UnknownHostException e) {
             e.printStackTrace();
-            updateOut("unknown host " + this.address);
             result = new Result("");
+            updateOut("unknown host " + this.address);
             this.complete.complete(result);
             return;
         }
