@@ -127,6 +127,9 @@ public final class TraceRoute implements Task {
         if (output != null) {
             output.write(lineBuffer.toString());
         }
+        if (result == null) {
+            result = new Result("");
+        }   
         result.append(lineBuffer.toString());
     }
 
@@ -147,6 +150,9 @@ public final class TraceRoute implements Task {
     private void updateOut(String str) {
         if (str != null) {
             output.write(str);
+        }
+        if (result == null) {
+            result = new Result("");
         }
         result.append(str);
     }
